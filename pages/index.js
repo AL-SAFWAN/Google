@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Body from "../components/Body";
 import Header from "../components/Header";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       </Head>
       {/* header */}
       <Header />
+      <Body />
       {/* body */}
     </div>
   );
