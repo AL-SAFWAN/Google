@@ -7,7 +7,7 @@ import Image from "next/image";
 
 function Body() {
   return (
-    <form className="flex flex-col items-center mt-44 flex-grow">
+    <form className="flex flex-col items-center mt-44 flex-grow ">
       <Image
         src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
         height={100}
