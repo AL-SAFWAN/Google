@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useRef } from "react";
 import Avatar from "../FrontPage/Avatar";
+import HeaderOptions from "./HeaderOptions";
 function Header() {
   const router = useRouter();
   const inputRef = useRef();
@@ -44,6 +45,7 @@ function Header() {
           url="https://lh3.googleusercontent.com/-9ieZ5JYxRQA/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucky9hy0FxsYfg5ETadAGXDz1vpM4Q/photo.jpg?sz=46"
         />
       </div>
+      <HeaderOptions />
     </header>
   );
 }
