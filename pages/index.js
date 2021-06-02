@@ -1,10 +1,20 @@
 import Head from "next/head";
 import Image from "next/image";
-import Body from "../components/Body";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-
+import { useRef } from "react";
+import Body from "../components/FrontPage/Body";
+import Footer from "../components/FrontPage/Footer";
+import Header from "../components/FrontPage/Header";
+import { useRouter } from "next/router";
 export default function Home() {
+  const text = useRef("");
+  const router = useRouter();
+  const search = (e) => {
+    e.preventDefault();
+    const { value } = text.current;
+    if (!value) return;
+    router.push(`/search?term=${value}`);
+    text.current.value = "";
+  };
   return (
     <div className="flex flex-col justify-center h-screen">
       <Head>
@@ -14,7 +24,7 @@ export default function Home() {
       </Head>
       {/* header */}
       <Header />
-      <Body />
+      <Body search={search} text={text} />
       <Footer />
       {/* body */}
     </div>

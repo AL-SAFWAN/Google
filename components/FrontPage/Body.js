@@ -5,7 +5,7 @@ import {
 } from "@heroicons/react/outline";
 import Image from "next/image";
 
-function Body() {
+function Body({ search, text }) {
   return (
     <form className="flex flex-col items-center mt-44 flex-grow ">
       <Image
@@ -20,13 +20,21 @@ function Body() {
       "
       >
         <SearchIcon className="h-5 mr-3 text-gray-500" />
-        <input type="text" className="focus:outline-none flex-grow" />
+        <input
+          ref={text}
+          type="text"
+          className="focus:outline-none flex-grow"
+        />
         <MicrophoneIcon className="h-5  text-gray-500" />
       </div>
 
       <div>
-        <button className="btn">Google Search</button>
-        <button className="btn">I'm Feeling Lucky</button>
+        <button className="btn" onClick={search}>
+          Google Search
+        </button>
+        <button className="btn" onClick={search}>
+          I'm Feeling Lucky
+        </button>
       </div>
     </form>
   );
